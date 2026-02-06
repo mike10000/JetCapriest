@@ -203,7 +203,7 @@ async function loadEvents() {
             // Use demo data
             events = CONFIG.demoEvents;
         } else {
-            // Fetch from Netlify function
+            // Fetch from API
             const response = await fetch(CONFIG.eventsApiUrl);
             
             if (!response.ok) {
@@ -214,8 +214,10 @@ async function loadEvents() {
             events = data.events || data;
         }
         
-        // Hide loading
-        elements.eventsLoading.style.display = 'none';
+        // Hide loading (if element exists)
+        if (elements.eventsLoading) {
+            elements.eventsLoading.style.display = 'none';
+        }
         
         if (events && events.length > 0) {
             renderEvents(events);
@@ -228,7 +230,9 @@ async function loadEvents() {
         
         // Try demo data as fallback
         if (!CONFIG.useDemoData && CONFIG.demoEvents.length > 0) {
-            elements.eventsLoading.style.display = 'none';
+            if (elements.eventsLoading) {
+                elements.eventsLoading.style.display = 'none';
+            }
             renderEvents(CONFIG.demoEvents);
         } else {
             showEventsError();
@@ -240,7 +244,9 @@ async function loadEvents() {
  * Render events to the DOM
  */
 function renderEvents(events) {
-    elements.eventsList.innerHTML = events.map(event => createEventCard(event)).join('');
+    if (elements.eventsList) {
+        elements.eventsList.innerHTML = events.map(event => createEventCard(event)).join('');
+    }
 }
 
 /**
@@ -289,18 +295,18 @@ function createEventCard(event) {
  * Show no events message
  */
 function showNoEvents() {
-    elements.eventsLoading.style.display = 'none';
-    elements.eventsList.innerHTML = '';
-    elements.noEvents.style.display = 'block';
+    if (elements.eventsLoading) elements.eventsLoading.style.display = 'none';
+    if (elements.eventsList) elements.eventsList.innerHTML = '<p style="text-align:center;color:#A0A0A0;">No upcoming shows. Check back soon!</p>';
+    if (elements.noEvents) elements.noEvents.style.display = 'block';
 }
 
 /**
  * Show error message
  */
 function showEventsError() {
-    elements.eventsLoading.style.display = 'none';
-    elements.eventsList.innerHTML = '';
-    elements.eventsError.style.display = 'block';
+    if (elements.eventsLoading) elements.eventsLoading.style.display = 'none';
+    if (elements.eventsList) elements.eventsList.innerHTML = '<p style="text-align:center;color:#A0A0A0;">Unable to load events.</p>';
+    if (elements.eventsError) elements.eventsError.style.display = 'block';
 }
 
 // ============================================
