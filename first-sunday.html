@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Jetcapriest - Virginia-based musician, producer & singer-songwriter delivering soulful performances of classic rock covers and faith-inspired originals.">
+    <meta name="description" content="First Sunday - Virginia's premier cover band led by Jet Capriest. Book us for your next event.">
     
-    <title>Jetcapriest | Musician • Producer • Sing-writer</title>
+    <title>First Sunday | Full Band | FirstSundayMusic.com</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,8 +17,9 @@
     
     <!-- Styles -->
     <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/first-sunday.css">
 </head>
-<body>
+<body class="first-sunday-page">
     <!-- Navigation -->
     <nav class="nav" id="nav">
         <a href="/" class="nav-logo">FIRST SUNDAY MUSIC</a>
@@ -26,8 +27,8 @@
             <span></span><span></span><span></span>
         </button>
         <div class="nav-links" id="navLinks">
-            <a href="/" class="active">Jet Capriest</a>
-            <a href="/first-sunday">First Sunday</a>
+            <a href="/">Jet Capriest</a>
+            <a href="/first-sunday" class="active">First Sunday</a>
             <a href="#shows">Shows</a>
             <a href="#contact">Contact</a>
         </div>
@@ -35,13 +36,13 @@
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
-        <div class="hero-bg">
-            <img src="/assets/images/hero-bg.png" alt="Jetcapriest performing live">
+        <div class="hero-bg hero-bg-band">
             <div class="hero-overlay"></div>
         </div>
         <div class="hero-content">
-            <h1 class="hero-title">JETCAPRIEST</h1>
-            <p class="hero-subtitle">Musician • Producer • Sing-writer</p>
+            <p class="hero-label">THE FULL BAND EXPERIENCE</p>
+            <h1 class="hero-title">FIRST SUNDAY</h1>
+            <p class="hero-subtitle">Rock • Soul • Classics</p>
             <div class="hero-socials">
                 <a href="https://www.facebook.com/jetcapriest" target="_blank" class="social-btn"><i class="fab fa-facebook-f"></i></a>
                 <a href="https://www.youtube.com/@JetCapriest" target="_blank" class="social-btn"><i class="fab fa-youtube"></i></a>
@@ -54,23 +55,70 @@
     <!-- About Section -->
     <section class="section" id="about">
         <div class="container">
-            <h2 class="section-title">About</h2>
+            <h2 class="section-title">The Band</h2>
             <div class="about-grid">
                 <div class="about-image-wrapper">
-                    <img src="/assets/images/hero-bg.png" alt="Jetcapriest" class="about-image">
+                    <div class="band-photo-placeholder">
+                        <i class="fas fa-users"></i>
+                        <p>Band Photo</p>
+                    </div>
                 </div>
                 <div class="about-content">
-                    <p class="about-text">Jetcapriest is a passionate musician, producer, and singer-songwriter based in the Virginia area.</p>
-                    <p class="about-text">With a heart rooted in faith and a love for timeless classics, Jetcapriest delivers soulful performances that blend rock, pop, and heartfelt originals.</p>
-                    <p class="about-text">From intimate venues to lively stages, every performance is an invitation to experience music that moves the soul. Whether covering beloved classics like "Valerie," "Come Together," or "Don't Stop Believin'," or sharing original compositions, Jetcapriest creates memorable musical experiences.</p>
-                    <p class="about-tagline">Christ lover. Music maker. Soul stirrer.</p>
+                    <p class="about-text"><strong>First Sunday</strong> is the full band experience featuring Jet Capriest on lead vocals.</p>
+                    <p class="about-text">From intimate venues to large events, First Sunday brings the energy with a setlist spanning rock, soul, pop, and timeless classics that get everyone on their feet.</p>
+                    <p class="about-text">Perfect for:</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Corporate Events</li>
+                        <li><i class="fas fa-check"></i> Weddings & Receptions</li>
+                        <li><i class="fas fa-check"></i> Private Parties</li>
+                        <li><i class="fas fa-check"></i> Festivals & Concerts</li>
+                        <li><i class="fas fa-check"></i> Club & Bar Venues</li>
+                    </ul>
+                    <p class="about-tagline">Bringing the party. Every time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Band Members Section -->
+    <section class="section section-alt" id="members">
+        <div class="container">
+            <h2 class="section-title">Meet The Band</h2>
+            <div class="members-grid">
+                <div class="member-card">
+                    <div class="member-photo">
+                        <i class="fas fa-microphone-alt"></i>
+                    </div>
+                    <h3 class="member-name">Jet Capriest</h3>
+                    <p class="member-role">Lead Vocals</p>
+                </div>
+                <div class="member-card">
+                    <div class="member-photo">
+                        <i class="fas fa-guitar"></i>
+                    </div>
+                    <h3 class="member-name">TBA</h3>
+                    <p class="member-role">Guitar</p>
+                </div>
+                <div class="member-card">
+                    <div class="member-photo">
+                        <i class="fas fa-bass-guitar"></i>
+                    </div>
+                    <h3 class="member-name">TBA</h3>
+                    <p class="member-role">Bass</p>
+                </div>
+                <div class="member-card">
+                    <div class="member-photo">
+                        <i class="fas fa-drum"></i>
+                    </div>
+                    <h3 class="member-name">TBA</h3>
+                    <p class="member-role">Drums</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Shows Section -->
-    <section class="section section-alt" id="shows">
+    <section class="section" id="shows">
         <div class="container">
             <h2 class="section-title">Upcoming Shows</h2>
             <div class="events-container">
@@ -80,7 +128,7 @@
     </section>
 
     <!-- Stage Section -->
-    <section class="section" id="stage">
+    <section class="section section-alt" id="stage">
         <div class="container">
             <h2 class="section-title">Stage Setup</h2>
             <div class="stage-grid">
@@ -93,43 +141,46 @@
                     <div class="requirements-section">
                         <h3><i class="fas fa-volume-up"></i> Sound Requirements</h3>
                         <ul>
-                            <li>Professional PA system with monitors</li>
-                            <li>2-4 channel mixer (minimum)</li>
-                            <li>Microphone with stand (SM58 or equivalent)</li>
-                            <li>DI box for acoustic/electric instruments</li>
+                            <li>Full PA system with monitors</li>
+                            <li>8+ channel mixer</li>
+                            <li>4+ microphones with stands</li>
+                            <li>2 DI boxes minimum</li>
+                            <li>Drum microphones (if not using house kit)</li>
                         </ul>
                     </div>
                     <div class="requirements-section">
                         <h3><i class="fas fa-expand-arrows-alt"></i> Stage Requirements</h3>
                         <ul>
-                            <li>Minimum 8' x 8' performance area</li>
-                            <li>Adequate lighting</li>
-                            <li>Power outlet within 10 feet</li>
+                            <li>Minimum 16' x 12' performance area</li>
+                            <li>Full stage lighting</li>
+                            <li>4+ power outlets</li>
                         </ul>
                     </div>
                     <div class="requirements-section">
                         <h3><i class="fas fa-guitar"></i> Backline (if available)</h3>
                         <ul>
-                            <li>Guitar amplifier (Fender, Vox, or similar - 40W+)</li>
-                            <li>Keyboard/Piano (for select performances)</li>
+                            <li>Guitar amplifier (Fender, Vox, Marshall)</li>
+                            <li>Bass amplifier</li>
+                            <li>Drum kit (acoustic preferred)</li>
+                            <li>Keyboard/Piano</li>
                         </ul>
                     </div>
-                    <p class="requirements-note">For detailed stage plots and input lists, please contact the booking agent.</p>
+                    <p class="requirements-note">Technical rider and stage plot available upon request.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="section section-alt" id="contact">
+    <section class="section" id="contact">
         <div class="container">
-            <h2 class="section-title">Contact & Booking</h2>
+            <h2 class="section-title">Book First Sunday</h2>
             <div class="contact-card">
                 <p class="contact-label">Booking Agent</p>
                 <h3 class="contact-name">Dave Mascetello</h3>
                 <p class="contact-company">Planetary Band</p>
                 <a href="https://planetaryband.com" target="_blank" class="btn btn-primary">
-                    <i class="fas fa-calendar-check"></i> Book Now
+                    <i class="fas fa-calendar-check"></i> Book The Band
                 </a>
             </div>
         </div>
@@ -149,7 +200,7 @@
                 <a href="https://www.instagram.com/jetcapriest" target="_blank"><i class="fab fa-instagram"></i></a>
             </div>
             <p class="footer-copyright">&copy; <span id="currentYear">2026</span> First Sunday Music. All rights reserved.</p>
-            <p class="footer-domain" style="font-size:12px;color:#6E7681;margin-top:10px;letter-spacing:2px;">FirstSundayMusic.com</p>
+            <p class="footer-domain">FirstSundayMusic.com</p>
         </div>
     </footer>
 

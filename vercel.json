@@ -1,7 +1,10 @@
 {
   "version": 2,
-  "name": "jetcapriest",
+  "name": "firstsundaymusic",
   "public": true,
+  "rewrites": [
+    { "source": "/first-sunday", "destination": "/first-sunday.html" }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",
