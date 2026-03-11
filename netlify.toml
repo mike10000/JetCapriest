@@ -1,0 +1,16 @@
+# Netlify Configuration for First Sunday Music
+
+[build]
+  publish = "."
+
+# Redirects for clean URLs
+[[redirects]]
+  from = "/first-sunday"
+  to = "/first-sunday.html"
+  status = 200
+
+# Cache static assets
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
