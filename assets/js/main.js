@@ -190,6 +190,16 @@ function initScrollEffects() {
             }
         });
     }
+    
+    // Mesh gradient parallax for First Sunday page
+    const meshGradient = document.querySelector('.mesh-gradient');
+    if (meshGradient) {
+        window.addEventListener('scroll', () => {
+            const scroll = window.pageYOffset;
+            const rate = scroll * 0.15;
+            meshGradient.style.transform = `translateY(${rate}px)`;
+        });
+    }
 }
 
 // ============================================
