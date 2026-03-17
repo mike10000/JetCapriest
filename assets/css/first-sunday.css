@@ -19,8 +19,8 @@
     position: absolute;
     border-radius: 50%;
     filter: blur(80px);
-    opacity: 0.6;
-    animation: meshFloat 18s ease-in-out infinite;
+    opacity: 0.65;
+    will-change: transform;
 }
 
 .mesh-blob-1 {
@@ -29,8 +29,7 @@
     top: -20%;
     left: -10%;
     background: radial-gradient(circle, rgba(212, 168, 83, 0.35) 0%, transparent 70%);
-    animation-duration: 22s;
-    animation-delay: 0s;
+    animation: meshFloat1 12s ease-in-out infinite;
 }
 
 .mesh-blob-2 {
@@ -39,8 +38,7 @@
     top: 20%;
     right: -15%;
     background: radial-gradient(circle, rgba(26, 31, 61, 0.9) 0%, transparent 70%);
-    animation-duration: 20s;
-    animation-delay: -4s;
+    animation: meshFloat2 14s ease-in-out infinite;
 }
 
 .mesh-blob-3 {
@@ -49,8 +47,7 @@
     bottom: -10%;
     left: 10%;
     background: radial-gradient(circle, rgba(45, 53, 97, 0.8) 0%, transparent 70%);
-    animation-duration: 25s;
-    animation-delay: -8s;
+    animation: meshFloat3 10s ease-in-out infinite;
 }
 
 .mesh-blob-4 {
@@ -58,9 +55,8 @@
     height: 40%;
     top: 40%;
     left: 30%;
-    background: radial-gradient(circle, rgba(212, 168, 83, 0.2) 0%, transparent 70%);
-    animation-duration: 16s;
-    animation-delay: -2s;
+    background: radial-gradient(circle, rgba(212, 168, 83, 0.25) 0%, transparent 70%);
+    animation: meshFloat4 11s ease-in-out infinite;
 }
 
 .mesh-blob-5 {
@@ -69,23 +65,39 @@
     bottom: -25%;
     right: -20%;
     background: radial-gradient(circle, rgba(26, 31, 61, 0.7) 0%, transparent 70%);
-    animation-duration: 24s;
-    animation-delay: -6s;
+    animation: meshFloat5 13s ease-in-out infinite;
 }
 
-@keyframes meshFloat {
-    0%, 100% {
-        transform: translate(0, 0) scale(1);
-    }
-    25% {
-        transform: translate(5%, -5%) scale(1.05);
-    }
-    50% {
-        transform: translate(-5%, 5%) scale(0.95);
-    }
-    75% {
-        transform: translate(-3%, -3%) scale(1.02);
-    }
+@keyframes meshFloat1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(15%, -12%) scale(1.15); }
+    50% { transform: translate(-10%, 15%) scale(0.9); }
+    75% { transform: translate(-15%, -8%) scale(1.08); }
+}
+
+@keyframes meshFloat2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(-18%, 10%) scale(1.12); }
+    66% { transform: translate(12%, -15%) scale(0.88); }
+}
+
+@keyframes meshFloat3 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(12%, 18%) scale(1.1); }
+    50% { transform: translate(-15%, -10%) scale(0.92); }
+    75% { transform: translate(8%, -18%) scale(1.05); }
+}
+
+@keyframes meshFloat4 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-20%, 12%) scale(1.2); }
+}
+
+@keyframes meshFloat5 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(-12%, -20%) scale(0.9); }
+    50% { transform: translate(18%, 8%) scale(1.15); }
+    75% { transform: translate(10%, 15%) scale(0.95); }
 }
 
 /* Hero Logo */
