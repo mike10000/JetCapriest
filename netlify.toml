@@ -3,11 +3,16 @@
 [build]
   publish = "."
 
-# Redirects for clean URLs
+# First Sunday is the site home; legacy paths redirect to /
 [[redirects]]
   from = "/first-sunday"
-  to = "/first-sunday.html"
-  status = 200
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/first-sunday.html"
+  to = "/"
+  status = 301
 
 # Cache static assets
 [[headers]]

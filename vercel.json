@@ -2,8 +2,9 @@
   "version": 2,
   "name": "firstsundaymusic",
   "public": true,
-  "rewrites": [
-    { "source": "/first-sunday", "destination": "/first-sunday.html" }
+  "redirects": [
+    { "source": "/first-sunday", "destination": "/", "permanent": true },
+    { "source": "/first-sunday.html", "destination": "/", "permanent": true }
   ],
   "headers": [
     {
