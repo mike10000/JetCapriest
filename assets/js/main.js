@@ -8,24 +8,80 @@
 // ============================================
 // CONFIGURATION
 // ============================================
+
+function getEventsSite() {
+    if (typeof document === 'undefined') return 'first-sunday';
+    if (document.body.classList.contains('first-sunday-page')) return 'first-sunday';
+    return 'jet-capriest';
+}
+
 const CONFIG = {
-    // Vercel API endpoint
     eventsApiUrl: '/api/events',
     
-    // Fallback/demo events if API fails
-    demoEvents: [
-        {
-            id: '1',
-            date: 'Fri, Jun 19, 2026',
-            time: '6:00 PM',
-            venue: 'Lifetime',
-            city: 'Gainesville',
-            state: 'VA',
-            ticketUrl: '#'
-        }
-    ],
+    demoEventsBySite: {
+        'first-sunday': [
+            {
+                id: '1',
+                date: 'Fri, Jun 19, 2026',
+                time: '6:00 PM',
+                venue: 'Lifetime',
+                city: 'Gainesville',
+                state: 'VA',
+                ticketUrl: '#'
+            }
+        ],
+        'jet-capriest': [
+            {
+                id: '1',
+                date: 'Thu, May 21, 2026',
+                time: '2:00 PM',
+                venue: "Nat's Bullpen",
+                city: 'Sterling',
+                state: 'VA',
+                ticketUrl: '#'
+            },
+            {
+                id: '2',
+                date: 'Fri, May 22, 2026',
+                time: '6:00 PM',
+                venue: 'Commas Food Hall',
+                city: 'Ashburn',
+                state: 'VA',
+                ticketUrl: '#'
+            },
+            {
+                id: '3',
+                date: 'Sat, May 23, 2026',
+                time: '2:00 PM',
+                venue: 'Naked Mountain Winery',
+                city: 'Markham',
+                state: 'VA',
+                ticketUrl: '#'
+            },
+            {
+                id: '4',
+                date: 'Sat, May 30, 2026',
+                time: '5:00 PM',
+                venue: 'Mill St. Draft Garden',
+                city: 'Occoquan',
+                state: 'VA',
+                ticketUrl: '#'
+            },
+            {
+                id: '5',
+                date: 'Fri, Jun 19, 2026',
+                time: '6:00 PM',
+                venue: 'Lifetime',
+                city: 'Gainesville',
+                state: 'VA',
+                ticketUrl: '#'
+            }
+        ]
+    },
     
-    // On Vercel, load from /api/events (see api/events.js). Demo list used if fetch fails (e.g. static preview).
+    getEventsSite,
+    
+    // On Vercel, load from /api/events (see api/events.js). Fallback lists match site.
     useDemoData: false
 };
 
@@ -187,44 +243,43 @@ function initScrollEffects() {
 // EVENTS LOADING
 // ============================================
 async function loadEvents() {
+    const site = CONFIG.getEventsSite();
+    const fallbackEvents = CONFIG.demoEventsBySite[site] || [];
+
     try {
         let events;
-        
+
         if (CONFIG.useDemoData) {
-            // Use demo data
-            events = CONFIG.demoEvents;
+            events = fallbackEvents;
         } else {
-            // Fetch from API
-            const response = await fetch(CONFIG.eventsApiUrl);
-            
+            const url = `${CONFIG.eventsApiUrl}?site=${encodeURIComponent(site)}`;
+            const response = await fetch(url);
+
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
-            
+
             const data = await response.json();
             events = data.events || data;
         }
-        
-        // Hide loading (if element exists)
+
         if (elements.eventsLoading) {
             elements.eventsLoading.style.display = 'none';
         }
-        
+
         if (events && events.length > 0) {
             renderEvents(events);
         } else {
             showNoEvents();
         }
-        
     } catch (error) {
         console.error('Error loading events:', error);
-        
-        // Try demo data as fallback
-        if (!CONFIG.useDemoData && CONFIG.demoEvents.length > 0) {
+
+        if (!CONFIG.useDemoData && fallbackEvents.length > 0) {
             if (elements.eventsLoading) {
                 elements.eventsLoading.style.display = 'none';
             }
-            renderEvents(CONFIG.demoEvents);
+            renderEvents(fallbackEvents);
         } else {
             showEventsError();
         }
