@@ -105,9 +105,18 @@
     max-width: 400px;
     width: 80%;
     height: auto;
-    margin: 0 auto 30px;
+    margin: 0 auto 18px;
     filter: drop-shadow(0 10px 30px rgba(212, 168, 83, 0.3));
     animation: fadeInUp 1s ease-out;
+}
+
+.first-sunday-page .hero-subtitle {
+    margin-top: -10px;
+    margin-bottom: 36px;
+}
+
+.first-sunday-page .hero-socials {
+    margin-top: -16px;
 }
 
 @media (max-width: 768px) {

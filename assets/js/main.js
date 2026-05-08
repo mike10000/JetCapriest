@@ -16,31 +16,12 @@ const CONFIG = {
     demoEvents: [
         {
             id: '1',
-            date: 'Sat, Mar 15, 2026',
-            time: '8:00 PM',
-            venue: 'Crossroads Chantilly',
-            city: 'Chantilly',
+            date: 'Fri, Jun 19, 2026',
+            time: '6:00 PM',
+            venue: 'Lifetime',
+            city: 'Gainesville',
             state: 'VA',
             ticketUrl: '#'
-        },
-        {
-            id: '2',
-            date: 'Fri, Mar 28, 2026',
-            time: '9:00 PM',
-            venue: 'The Blue Note Lounge',
-            city: 'Arlington',
-            state: 'VA',
-            ticketUrl: '#'
-        },
-        {
-            id: '3',
-            date: 'Sat, Apr 12, 2026',
-            time: '7:30 PM',
-            venue: 'Faith Community Church',
-            city: 'Fairfax',
-            state: 'VA',
-            ticketUrl: null,
-            isFree: true
         }
     ],
     
