@@ -4,7 +4,7 @@
 export default function handler(req, res) {
     // Set CORS headers
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Cache-Control', 's-maxage=300');
+    res.setHeader('Cache-Control', 'public, s-maxage=120, stale-while-revalidate=600');
 
     const events = [
         {

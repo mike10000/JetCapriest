@@ -25,8 +25,8 @@ const CONFIG = {
         }
     ],
     
-    // Use demo data if true (set to false for production)
-    useDemoData: true
+    // On Vercel, load from /api/events (see api/events.js). Demo list used if fetch fails (e.g. static preview).
+    useDemoData: false
 };
 
 // ============================================
